@@ -58,12 +58,55 @@ const data = {
                     ],
                 },
                 {
-                    type: "platforms",
-                    platforms: "",
+                    type: "requirements",
+                    platforms: [
+                        "steam", "xbox", "playstation", "facebook", "twitter", "instagram", "patreon", "twitch", "youtube"
+                    ],
+                    requirements: [
+                        {
+                            type: "minimum-requirements",
+                            requirements: [
+                                {title: "OS", value: "Win7"},
+                                {title: "Processor", value: "Intel I3 or Ryzen 3"},
+                                {title: "RAM", value: "8GB"},
+                                {title: "Graphics", value: "Geforce GTX 570"},
+                                {title: "Storage", value: "1GB HDD"},
+                            ]
+                        },
+                        {
+                            type: "recommended-requirements",
+                            requirements: [
+                                {title: "OS", value: "Win11"},
+                                {title: "Processor", value: "Intel I9 or Ryzen 7"},
+                                {title: "RAM", value: "16GB"},
+                                {title: "Graphics", value: "Geforce RTX 2080"},
+                                {title: "Storage", value: "5GB SSD"},
+                            ]
+                        }
+                    ],
+                },
+                {
+                    type: "wishlist",
+                },
+                {
+                    type: "faq",
+                    questions: [
+                        {question: "What does this do?", answer: "Stuff"},
+                        {question: "What does that do?", answer: "other stuff"},
+                        {question: "What does this do?", answer: "more stuff"},
+                    ]
                 },
             ],
         
         }
     ]
 }
+
+let page = data.pages[1];
+
+document.title = data.brandName + " - " + page.pageName;
+// get access to the branding and change to data.brandName
+document.getElementById("brand").innerHTML = data.brandName.toUpperCase();
+// get access to the page title h1 and change to page.pageName
+document.getElementById("pageName").innerHTML = page.pageName;
 
